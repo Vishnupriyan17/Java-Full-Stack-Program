@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
-    
+        body{
+            background-color: rgb(255, 255, 255);
+            background-image: url("Login.jpg");
+            position: absolute;
+            background-size: 500px;
+            background-repeat: no-repeat;
+        }
         #one{
-            border: 2px solid grey;
             border-radius: 25px;
             position: absolute;
-            margin-top: 150px;
+            margin-top: 100px;
             padding: 50px;
-            margin-left: 500px;
+            margin-left: 600px;
             background-color: rgb(233, 242, 156);
            
         }
@@ -29,13 +34,28 @@
             border: 2px solid rgb(190, 186, 181);
             border-radius: 8px;
             width: 250px;
-            height: 25px;
+            height: 35px;
+            background-color: black;
+            color: beige;
+            transition-duration: 0.4s;
+            
+        }
+        #name:hover{
+            background-color: beige;
+            color: black;
         }
         #pas{
             border: 2px solid rgb(190, 186, 181);
             border-radius: 8px;
             width: 250px;
-            height: 25px;
+            height: 35px;
+            background-color: black;
+            color: beige;
+            transition-duration: 0.4s;
+        }
+        #pas:hover{
+            background-color: beige;
+            color: black;
         }
         #b1,#b2{
             border: none;
@@ -45,19 +65,29 @@
            padding-left: 5px;
            margin-left: 40px;
            background-color: darkorange;
+           transition-duration: 0.4s;
         }
+        #b1:hover,#b2:hover{
+            background-color: black;
+            color: bisque;
+        }
+       
     </style>
 </head>
 <body>
     <div id="one">
-        <h1 id="start">Login Page</h1>
+        <h1 id="start">Login</h1>
             <div >
                 <label for="user">Username: </label>
-                <input type="text" name="user" id="name" placeholder="Enter your name"><br><br>
+                <input type="text" name="user" id="name" placeholder="     Enter your name"><br><br>
                 <label for="pass">Password: </label>
-                <input type="password" name="pass" id="pas" placeholder="Enter your password"><br><br>
+                <input type="password" name="pass" id="pas" placeholder="      Enter your password"><br><br>
                <button type="reset" id="b1">Reset</button>
             <button type="submit" id="b2" >Submit</button</div> 
+        </div><br>
+        <div>
+            <pre>Don't Have An Account?</pre>
+            <a><pre>Forget Password?</pre></a>
         </div>
     </div>
 </body>
