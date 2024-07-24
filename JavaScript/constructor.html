@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    <script>
+        class student{
+            constructor(name,age,dept){
+                this.name= name;
+                this.age=age;
+                this.dept=dept;
+            }
+            display(){
+                document.write("Student Name: "+this.name+"<br>");
+                document.write("Student Age: "+this.age+"<br>");
+                document.write("Student Dept: "+this.dept+"<br>");
+            }
+        }
+        var student1 = new student('vishnu',21,'IT');
+        student1.display();
+
+        var student2 = new student('vasanth',21,'cse');
+        student2.display();        
+    </script>
+</body>
+</html>

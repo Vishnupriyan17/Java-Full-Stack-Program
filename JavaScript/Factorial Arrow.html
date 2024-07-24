@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    Enter the number: <input type="text" id="num">
+    <button onclick="fact()">Factorial</button>
+    <pre id="result"></pre>
+    <script>
+        const fact = () =>{
+            let a = parseInt(document.getElementById('num').value);
+            let result = "<table border='1' width='50%'>";
+            result += "<tr><th>Number</th><th>Factorial</th></tr>";
+        for(i = 0;i<=a;i++){
+            let fact = 1;
+            for(j = 0;j<=i;j++){
+                fact = fact*i;
+            }
+            result += "<tr><td>"+i+"</td><td>"+fact+"</td></tr>";
+
+        }   
+        result += "</table>"
+        document.getElementById("result").innerHTML=result;     
+    }
+    </script>
+</body>
+</html>
