@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button onclick="display()">Click me</button><br><br>
+    <div><input type="text" id="num1" onfocus="num1"><br><br>
+    <input type="text" id="num2" onfocus="num2" onblur="add()">
+   <br><br>
+   <h1 onmouseover="show()" id="word">Hello</h1>
+</div>
+    <pre id="result"></pre>
+    <script>
+        var a = 'Hello JavaScript'
+        function display(){
+           document.getElementById('result').innerHTML=a;
+        }
+        function add(){
+            let a = parseInt(document.getElementById('num1').value);
+            let b = parseInt(document.getElementById('num2').value);
+            let ans = a+b;
+            document.getElementById('result').innerHTML=ans;
+        }
+        function show(){
+            document.getElementById('word').innerHTML="Hello World"
+        }
+    </script>
+</body>
+</html>

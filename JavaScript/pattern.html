@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern</title>
+    
+</head>
+<body>
+    <div>
+       Enter the Number <input type="text" name="number" id="input">
+    </div><br><br>
+    <button onclick="pattern()">Calculate</button>
+    <pre id="Result">
+
+    </pre>
+    <script>
+        function pattern(){
+            let a = document.getElementById('input').value;
+            for(let i=1;i<=a;i++){
+                for(let j=1;j<=i;j++){
+                    document.write('* ');
+                }
+                document.write('<br> ');
+                
+            }
+        }
+    </script>
+</body>
+</html>

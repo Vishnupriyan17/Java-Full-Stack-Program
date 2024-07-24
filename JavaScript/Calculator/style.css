@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+#outerline{
+    border: 8px solid rgb(61, 61, 61);
+    background-color: rgb(77, 73, 73);
+    width: 350px;
+    height: 500px
+}
+#screen{
+    background-color: aliceblue;
+    font-size: 20px;
+    font-weight: bold;
+    width: 330px;
+    height: 45px;
+    padding: 5px;
+    margin: 4.5px;
+}
+
+#row{
+    display: flex;
+}
+
+.but{
+    
+    width: 95px;
+    height: 70px;
+    margin: 9px;
+    background-color: aqua;
+    text-align: center;
+    border-radius: 10px;
+}
+
