@@ -8,18 +8,24 @@
   <body>
     <p>Enter number : <input type="text" id="num" /></p>
     <button onclick="Check()">Check</button>
-    <p id="res"></p>
+    <p id="Result"></p>
     <script>
       function Check() {
-        var bool = true;
+        var result = 'It is prime number';
         var num = parseInt(document.getElementById("num").value);
-        for (i = 2; i < num; i++) {
+        if(num == 0){
+            result='It is not a prime number';
+          }
+          else if(num >= 2){
+        for (i = 2; i <= num; i++) {
           if (num % i == 0) {
-            bool = false;
+            result = 'It is not a prime number';
+            break;
           }
         }
-        if(bool) document.getElementById("res").innerHTML = "It is Prime Number ";
-        else document.getElementById("res").innerHTML = "It is Not Prime Number ";
+      }
+        if(result == "It is prime number") document.getElementById("Result").innerHTML = "It is Prime Number ";
+        else document.getElementById("Result").innerHTML = "It is Not Prime Number ";
         
       }
     </script>
