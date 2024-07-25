@@ -1,133 +1,96 @@
 var a='';
-var index = 0;
-var operator = "";
-function cleardisplay(){
-     a="0";
+
+
+
+function cleardisplay()
+{
+     a="";
     document.getElementById("display").innerHTML=a;
 }
-function val(num){
 
-    a = a+num;
+
+function back()
+{
+    a =(a.slice(0,-1));
     document.getElementById("display").innerHTML=a;
-    
-    
+}
 
-       
-    for(i = 0;i<a.length;i++){
+
+
+function val(num)
+{
+    a = a+num;
+    document.getElementById("display").innerHTML=a; 
+}
+
+
+
+function equal()
+{
+    var index = 0;
+    var operator = "";
+   document.getElementById("length").innerHTML=a.length;
+    for(i = 1;i<=a.length;i++){
         if(a.charAt(i)== "+"){
             operator = a.charAt(i);
             index = i;
+            break;
         }
         else if(a.charAt(i)== "-"){
             operator = a.charAt(i);
             index = i;
+            break;
         }
         else if(a.charAt(i)== "*"){
             operator = a.charAt(i);
             index = i;
+            break;
         }
         else if(a.charAt(i)== "/"){
             operator = a.charAt(i);
             index = i;
+            break;
         }
         else if(a.charAt(i)== "%"){
             operator = a.charAt(i);
             index = i;
+            break;
         }
     }
     var n1 = parseInt(a.substring(0,index));
-    var n2 = parseInt(a.substring(index+1,a.length-1));
+    var n2 = parseInt(a.substring(index,a.length));  
+    var symbol = operator
 
-
-    // switch(operator)
-    // {
-    //     case "+":
-    //     (document.getElementById('display').innerHTML=(n1+n2));
-    //     a = '';
-    //     break;
-
-    //     case "-":
-    //     (document.getElementById('display').innerHTML=(n1-n2));
-    //     a = '';
-    //     break;
-
-    //     case "*":
-    //     (document.getElementById('display').innerHTML=(n1*n2));
-    //     a = '';
-    //     break;
-
-    //     case "/":
-    //     (document.getElementById('display').innerHTML=(n1/n2));
-    //     a = '';
-    //     break;
-
-    //     case "%":
-    //     (document.getElementById('display').innerHTML=(n1%n2));
-    //     a = '';
-    //     break;
-    // }
-    }
-
-function back(){
-    a =(a.slice(0,-1));
-    document.getElementById("display").innerHTML=a;
-}
-function equal(n1,n2){
-    // let s = a.charAt(1);
-    // let n1 = parseInt(a.charAt(0));
-    // let n2 = parseInt(a.charAt(2));
-    // var index = 0;
-    // for(i = 0;i<a.length;i++){
-    //     if(a.charAt(i)== "+"){
-    //         operator = a.charAt(i);
-    //         index = i;
-    //     }
-    //     else if(a.charAt(i)== "-"){
-    //         operator = a.charAt(i);
-    //         index = i;
-    //     }
-    //     else if(a.charAt(i)== "*"){
-    //         operator = a.charAt(i);
-    //         index = i;
-    //     }
-    //     else if(a.charAt(i)== "/"){
-    //         operator = a.charAt(i);
-    //         index = i;
-    //     }
-    //     else if(a.charAt(i)== "%"){
-    //         operator = a.charAt(i);
-    //         index = i;
-    //     }
-    // }
-    // var n1 = parseInt(a.substring(0,index));
-    // var n2 = parseInt(a.substring(index+1,a.length-1));
-
-    switch(operator)
+    switch(symbol)
     {
         case "+":
-        (document.getElementById('display').innerHTML=(n1+n2));
-        a = '';
+        a= n1+n2;
+        document.getElementById('display').innerHTML=a;
+        a = a;
         break;
 
         case "-":
-        (document.getElementById('display').innerHTML=(n1-n2));
-        a = '';
+         a= n1-n2;
+        document.getElementById('display').innerHTML=a;
+        a = a;
         break;
 
         case "*":
-        (document.getElementById('display').innerHTML=(n1*n2));
-        a = '';
+        a= n1*n2;
+        document.getElementById('display').innerHTML=a;
+        a = a;
         break;
 
         case "/":
-        (document.getElementById('display').innerHTML=(n1/n2));
-        a = '';
-        break;
+            a= n1/n2;
+            document.getElementById('display').innerHTML=a;
+            a = a;
+            break;
 
         case "%":
-        (document.getElementById('display').innerHTML=(n1%n2));
-        a = '';
-        break;
+            a= n1%n2;
+            document.getElementById('display').innerHTML=a;
+            a = a;
+            break;
     }
 }
-
