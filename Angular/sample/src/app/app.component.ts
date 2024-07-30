@@ -9,5 +9,33 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'sample';
+  name : string ;
+  age : number;
+  email : string;
+  textcolor : string;
+
+  constructor() {
+    this.name = "vishnu";
+    this.age = 21;
+    this.email = "vishnukodees@.com";
+    this.textcolor = "green";
+  }
+
+  getaddition(a : number,b : number)
+  {
+    let sum = a + b;
+    return sum;
+  }
+
+  changename(){
+    this.name = "Vishnupriyan"
+  }
+
+  changeage(){
+    this.age = 51
+  }
+
+  changemail(){
+    this.email = "vishnukodeeswaran@gmail.com"
+  }
 }
