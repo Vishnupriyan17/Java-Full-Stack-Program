@@ -1,0 +1,26 @@
+<div>
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="border border-secondary" id="content">
+    <div class="border border-secondary rounded-5" id="content1">
+      <div class="form-floating mb-3 w-75 mt-5">
+        <input type="text" class="form-control" id="input" placeholder="Enter your Recipe Name...">
+        <label for="input" id="input">Recipe Name</label>
+      </div>
+      <div class="form-floating w-75 mt-5">
+        <input type="text" class="form-control" id="input" placeholder="Enter the origin of the recipe....">
+        <label for="input" id="input">Recipe Origin</label>
+      </div>
+      <div class="form-floating w-75 mt-5">
+        <input type="Url" class="form-control" id="input" placeholder="Enter your Recipr Url...">
+        <label for="input" id="input">Recipe Vedio Url</label>
+      </div>
+      <div id="back">
+        <button class=" btn btn-primary form-floating form-control ms-5 mt-5" id="buttons" onclick="oncreate()">Create</button>
+        <button class=" btn btn-success form-floating form-control ms-5 mt-5" id="buttons" onclick="onupdate()"  >Update</button>
+        <button class=" btn btn-warning form-floating form-control ms-5 mt-5" id="buttons" onclick="ondelete()" >Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
