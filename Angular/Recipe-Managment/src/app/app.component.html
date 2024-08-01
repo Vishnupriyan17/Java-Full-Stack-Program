@@ -1,28 +1,82 @@
-<div>
-  <h1>{{title}}</h1>
-</div>
-<div class="container">
-  <div class="border border-secondary" id="content">
-    <div class="border border-secondary rounded-5" id="content1">
-      <form>
-      <div class="form-floating mb-3 w-75 mt-5">
-        <input type="text" class="form-control" id="input" placeholder="Enter your Recipe Name...">
-        <label for="input" id="input">Recipe Name</label>
-      </div>
-      <div class="form-floating w-75 mt-5">
-        <input type="text" class="form-control" id="input" placeholder="Enter the origin of the recipe....">
-        <label for="input" id="input">Recipe Origin</label>
-      </div>
-      <div class="form-floating w-75 mt-5">
-        <input type="Url" class="form-control" id="input" placeholder="Enter your Recipr Url...">
-        <label for="input" id="input">Recipe Vedio Url</label>
-      </div>
-      <div id="back">
-        <button class=" btn btn-primary form-floating form-control ms-5 mt-5" id="buttons" onclick="oncreate()">Create</button>
-        <button class=" btn btn-success form-floating form-control ms-5 mt-5" id="buttons" onclick="onupdate()"  >Update</button>
-        <button class=" btn btn-warning form-floating form-control ms-5 mt-5" id="buttons" onclick="ondelete()" >Delete</button>
-      </div>
-    </form>
+<div class="border border-secondary"> 
+
+  <!-- Heading -->
+  <h1>Recipe Managment System</h1>
+
+
+  <div class="d-flex justify-content-center"> <!--Display and input-->
+
+    <!-- Input -->
+    <div class="border border-secondary data">
+      <form #myForm="ngForm">
+        <div class="form-floating mb-3 w-75 mt-5"><b id="tag">Recipe Name:</b>
+          <label for="input" ></label>
+          <input type="text" class="form-control" id="input"
+          name="rname"
+          #rname="ngModel"
+          ngModel
+          required
+          pattern="[a-zA-z]+">
+          <div *ngIf="rname.touched">
+            <div *ngIf="rname.errors?.['required']">
+              <font color="Blue"> <b id="tag">Recipe Name is required</b></font>
+            </div>
+            <div *ngIf="rname.errors?.['pattern']">
+              <font color="Blue"> <b id="tag">Invalid Recipe name</b></font>
+            </div>
+          </div>
+         
+          
+  
+  
+        </div>
+        <div class="form-floating w-75 mt-5"><b id="tag">Recipe Origin:</b>
+          <label for="input"></label>
+          <input type="text" class="form-control" id="input" name="rorigin"
+          #rorigin="ngModel"
+          ngModel
+          required
+          pattern="[a-zA-Z]+">
+          <div *ngIf="rorigin.touched">
+             <div *ngIf="rorigin.errors?.['required']">
+              <font color="blue"><b id="tag">Recipe Origin is required</b></font>
+             </div>
+             <div *ngIf="rorigin.errors?.['pattern']">
+              <font color="blue"><b id="tag">Invalid Origin name</b></font>
+             </div>
+          </div>
+         
+          
+  
+  
+  
+        </div>
+        <div class="form-floating w-75 mt-5"><b id="tag">Recipe Vedio Url:</b>
+          <label for="input"></label>
+          <input type="Url" class="form-control" id="input" name="url" #url="ngModel" ngModel
+          required pattern="[a-zA-Z0-9/:.]+">
+          <div *ngIf="url.touched">
+            <div *ngIf="url.errors?.['required']">
+              <font color="blue"><b id="tag">Recipe URL is required</b></font>
+            </div>
+            <div *ngIf="url.errors?.['pattern']">
+              <font color="blue"> <b id="tag">Invalid URL</b></font>
+            </div>
+          </div>
+          
+  
+  
+        </div>
+          <button class=" btn btn-primary form-floating form-control w-25 mt-5" id="buttons" onclick="oncreate()" style="display: inline;">Create</button>
+          <button class=" btn btn-success form-floating form-control w-25 mt-5" id="buttons" onclick="onupdate()" style="display: inline;" >Update</button>
+          <button class=" btn btn-warning form-floating form-control w-25 mt-5" id="buttons" onclick="ondelete()" style="display: inline;">Delete</button>
+      </form>
+    </div>
+
+
+    <!-- Display -->
+    <div class="border border-secondary data" >
+      ertyuiollkjhgfdsxdfghjk,
     </div>
   </div>
 </div>
