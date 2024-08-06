@@ -1,0 +1,27 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "name": "Chicken Biriyani",
+      "origin": "India",
+      "url": "https://youtube.com/shorts/W7N3UuS36cA?si=L9StrueI5HJlEwpF"
+    },
+    {
+      "id": "2",
+      "name": "Mutton Chukka",
+      "origin": "India",
+      "url": "https://youtu.be/vbDFnkUV6Nk?si=6QE2Hk2osR-FH_At"
+    },
+    {
+      "id": "4",
+      "name": "Fish Fry",
+      "origin": "India",
+      "url": "https://youtu.be/XkbMuDn_HRU?si=KJd1nz3RqoRIccbM"
+    },
+    {
+      "id": "5",
+      "name": "Prawn Fry",
+      "url": "https://youtu.be/Q_n1bRENGgE?si=RLE9HPkEz30BLpYw"
+    }
+  ]
+}

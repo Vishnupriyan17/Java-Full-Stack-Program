@@ -1,36 +1,44 @@
 import { Injectable } from '@angular/core';
-export interface food{
- name:string,
- country:string,
- url:string
-}
+import { Recipe } from './model/Recipe';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeServiceService {
+  wurl:string;
+  recipeArr:Recipe[];
+  recipe:Recipe;
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.wurl="http://localhost:3004/recipes";
+    this.recipe=new Recipe();
+    this.recipeArr=[];
+   }
 
-  foodlist:food[] = [
-    {name:"Thakkali satham",
-      country:"India",
-      url:"https://example.com"
-    },
-    {
-      name:"Sambar satham",
-      country:"India",
-      url:"https://example.com"
-    },
-    {
-      name:"Chicken",
-      country:"India",
-      url:"https://example.com"
-    }
-  ];
+   oncreate(recipe:Recipe){
+    this.http.post<Recipe>(this.wurl,recipe).subscribe();
+    return "Recipe Details Added"
+   }
 
-  oncreate(){
-    
+   onupdate(recipe:Recipe){
+    this.http.put<Recipe>(this.wurl+"/"+recipe.id,recipe).subscribe();
+    return "Recipe Details Updated";
+   }
+
+   ondelete(recipe:Recipe){
+    this.http.delete<Recipe>(this.wurl+"/"+recipe).subscribe();
+    return "Recipe Details Deleted";
+   }
+
+   findRecipe(rname:string){
+    this.http.get<Recipe>(this.wurl+"/"+rname).subscribe(data => this.recipe = data);
+    return this.recipe;
+  }
+
+  findAllRecipe(){
+    this.http.get<Recipe[]>(this.wurl).subscribe(data => this.recipeArr = data);
+    return this.recipeArr;
   }
 
 }
