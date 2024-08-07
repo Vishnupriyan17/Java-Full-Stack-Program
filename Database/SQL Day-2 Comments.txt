@@ -1,0 +1,31 @@
+Create table tbl_employee(empid numbers(5),empname varchar2(20),empsalary number(5));
+
+SELECT * from tbl_employee;
+
+INSERT INTO tbl_employee VALUES(101,'Vishnu',2000),(102,'Vimal',4000),(103,'Raj',4000),(104,'prem',3000);,(101,'vinoth',6000);
+
+SELECT empid FROM tbl_employee;
+
+SELECT DISTINCT empid FROM tbl_employee;
+
+SELECT * FROM tbl_employee;
+
+SELECT * from tbl_employee WHERE empid=102;
+
+DELETE FROM tbl_employee where empid=104;
+
+SELECT * from tbl_employee WHERE empname='Vishnu';
+
+SELECT * from tbl_employee WHERE empsalary>2000;
+
+SELECT * from tbl_employee WHERE empname != 'prem';
+
+SELECT * from tbl_employee WHERE empname <> 'Vimal';
+
+update tbl_employee SET empsalary=12000 where empid=103;
+
+UPDATE tbl_employee SET empsalary=13000,empname='Ajay' where empid=104;
+
+SELECT * FROM tbl_employee WHERE empid in (101,102,104);
+
+SELECT * FROM tbl_employee WHERE empid in (101,103,104);

@@ -1,0 +1,247 @@
+SQL> connect system
+Enter password:
+Connected.
+
+SQL> Create table tbl_employee(empid number(5),empname varchar2(20),empsalary number(5));
+
+Table created.
+
+SQL> desc tbl_employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ EMPSALARY                                          NUMBER(5)
+
+SQL> INSERT INTO tbl_employee VALUES(102,'Vimal',4000);
+
+1 row created.
+
+SQL> INSERT INTO tbl_employee VALUES(103,'Raj',4000);
+
+1 row created.
+
+SQL> INSERT INTO tbl_employee VALUES(104,'prem',3000);
+
+1 row created.
+
+SQL> INSERT INTO tbl_employee VALUES(101,'vinoth',6000);
+
+1 row created.
+
+SQL> select * from tbl_employee;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       101 Vishnu                     2000
+       102 Vimal                      4000
+       103 Raj                        4000
+       104 prem                       3000
+       101 vinoth                     6000
+
+SQL> select * from tbl_employee where empsalary >= 4000 and empid in (101,103,102);
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       102 Vimal                      4000
+       103 Raj                        4000
+       101 vinoth                     6000
+
+SQL> select * from tbl_employee where empsalary >= 4000 or empid in (101,103,102);
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       101 Vishnu                     2000
+       102 Vimal                      4000
+       103 Raj                        4000
+       101 vinoth                     6000
+
+SQL> insert into tbl_employee (empid,empsalary) values(200,9000);
+
+1 row created.
+
+SQL> select * from tbl_employee order by empid;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       101 Vishnu                     2000
+       101 vinoth                     6000
+       102 Vimal                      4000
+       103 Raj                        4000
+       104 prem                       3000
+       200                            9000
+
+6 rows selected.
+
+SQL> select * from tbl_employee order by empid desc;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       200                            9000
+       104 prem                       3000
+       103 Raj                        4000
+       102 Vimal                      4000
+       101 Vishnu                     2000
+       101 vinoth                     6000
+
+6 rows selected.
+
+SQL> select * from e
+  2
+SQL> select * from tbl_employee order by empname;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       103 Raj                        4000
+       102 Vimal                      4000
+       101 Vishnu                     2000
+       104 prem                       3000
+       101 vinoth                     6000
+       200                            9000
+
+6 rows selected.
+
+SQL> select * from tbl_employee order by empid,empname;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       101 Vishnu                     2000
+       101 vinoth                     6000
+       102 Vimal                      4000
+       103 Raj                        4000
+       104 prem                       3000
+       200                            9000
+
+6 rows selected.
+
+SQL> select * from tbl_employee order by empid,empname desc;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       101 vinoth                     6000
+       101 Vishnu                     2000
+       102 Vimal                      4000
+       103 Raj                        4000
+       104 prem                       3000
+       200                            9000
+
+6 rows selected.
+
+SQL> select * from tbl_employee order by empid,empname;
+
+     EMPID EMPNAME               EMPSALARY
+---------- -------------------- ----------
+       101 Vishnu                     2000
+       101 vinoth                     6000
+       102 Vimal                      4000
+       103 Raj                        4000
+       104 prem                       3000
+       200                            9000
+
+6 rows selected.
+
+SQL> alter table tbl_employee add doj date;
+
+Table altered.
+
+SQL> select * from tbl_employee;
+
+     EMPID EMPNAME               EMPSALARY DOJ
+---------- -------------------- ---------- ---------
+       101 Vishnu                     2000
+       102 Vimal                      4000
+       103 Raj                        4000
+       104 prem                       3000
+       101 vinoth                     6000
+       200                            9000
+
+6 rows selected.
+
+SQL> update tbl_employee set doj=sysdate where empid=101;
+
+2 rows updated.
+
+SQL> update tbl_employee set doj='17-sep-2023' where empid=102;
+
+1 row updated.
+
+SQL> update tbl_employee set doj='07-feb-2023' where empid=103;
+
+1 row updated.
+
+SQL> update tbl_employee set doj='07-feb-2023' where empid=104;
+
+1 row updated.
+
+SQL> update tbl_employee set doj='07-nov-2023' where empid=105;
+
+0 rows updated.
+
+SQL> update tbl_employee set doj='07-dec-2023' where empid=200;
+
+1 row updated.
+
+SQL> select * from tbl_employee ;
+
+     EMPID EMPNAME               EMPSALARY DOJ
+---------- -------------------- ---------- ---------
+       101 Vishnu                     2000 07-AUG-24
+       102 Vimal                      4000 17-SEP-23
+       103 Raj                        4000 07-FEB-23
+       104 prem                       3000 07-FEB-23
+       101 vinoth                     6000 07-AUG-24
+       200                            9000 07-DEC-23
+
+6 rows selected.
+
+SQL> desc tbl_employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ EMPSALARY                                          NUMBER(5)
+ DOJ                                                DATE
+
+SQL> alter table tbl_employee modify empsalary number(7);
+
+Table altered.
+
+SQL> desc tbl_employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ EMPSALARY                                          NUMBER(7)
+ DOJ                                                DATE
+
+SQL> alter table tbl_employee rename column empsalary to esalary;
+
+Table altered.
+
+SQL> alter table tbl_employee rename column  doj to date_of_join;
+
+Table altered.
+
+SQL> desc tbl_employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ ESALARY                                            NUMBER(7)
+ DATE_OF_JOIN                                       DATE
+
+SQL> rename tbl_employee to Employee;
+
+Table renamed.
+
+SQL> desc Employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ ESALARY                                            NUMBER(7)
+ DATE_OF_JOIN                                       DATE
+
+SQL> drop table Employee;
+
+Table dropped.
